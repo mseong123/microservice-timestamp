@@ -3,10 +3,8 @@
 
 // init project
 const express = require('express');
-const path = require('path')
 const app = express();
 const serverless=require('serverless-http');
-const router = express.Router();
 
 
 // enable CORS (https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
@@ -42,8 +40,5 @@ app.get("/api", function (req, res) {
       utc:new Date()
     })   
 });
-
-
-app.use(`/.netlify/functions/index`, router);
 
 module.exports.handler = serverless(app)
