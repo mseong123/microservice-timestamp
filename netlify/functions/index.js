@@ -20,7 +20,7 @@ app.use(express.static(path.resolve()+'/public'));
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (req, res) {
-  
+  res.sendFile(path.resolve() +' <blank> ' +__dir)
   res.sendFile(path.resolve()+'/views/index.html');
 });
 
