@@ -16,18 +16,18 @@ var cors = require('cors');
 app.use(cors({optionsSuccessStatus: 200}));  // some legacy browsers choke on 204
 
 // http://expressjs.com/en/starter/static-files.html
-app.use(express.static(path.join(__dirname,'../../public')));
+app.use(express.static(path.resolve()+'/public'));
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (req, res) {
-  res.send(path.join(__dirname,'../../views/index.html'))
-  res.sendFile(path.join(__dirname,'../../views/index.html'));
+  
+  res.sendFile(path.resolve()+'/views/index.html');
 });
 
 
 app.get("/api/:date", function (req, res) {
   const dateString=req.params.date
-  console.log(dateString)
+
   if (Date.parse(dateString)) 
     res.json({
       unix:new Date(dateString).getTime(),
