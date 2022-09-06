@@ -20,6 +20,7 @@ app.use(express.static(path.join(__dirname,'../../public')));
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (req, res) {
+  res.send(path.join(__dirname,'../../views/index.html'))
   res.sendFile(path.join(__dirname,'../../views/index.html'));
 });
 
