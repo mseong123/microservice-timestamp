@@ -1,7 +1,4 @@
-// index.js
-// where your node app starts
 
-// init project
 const express = require('express');
 const app = express();
 const serverless=require('serverless-http');
@@ -13,7 +10,7 @@ var cors = require('cors');
 
 app.use(cors({optionsSuccessStatus: 200}));  // some legacy browsers choke on 204
 
-
+//API endpoint
 app.get("/api/:date", function (req, res) {
   const dateString=req.params.date
 
